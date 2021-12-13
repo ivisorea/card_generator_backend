@@ -1,19 +1,11 @@
 import { Router } from 'express';
+import { getAllImages, getImage } from '../controllers/images.js';
 
 const imagesRouter = Router();
 
-imagesRouter.route('/').get((req, res) => {
-    res.json({
-        images: 'Images',
-    });
-    });
+imagesRouter.route('/').get(getAllImages);
 
-imagesRouter.route('/:id').get((req, res) => {
-    res.json({
-        images: 'Images',
-        id: req.params.id,
-    });
-    });
+imagesRouter.route('/:id').get(getImage);
 
 
     export default imagesRouter;
