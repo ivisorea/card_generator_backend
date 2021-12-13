@@ -8,7 +8,7 @@ export const getAllImages = asyncHandler(async (req,res,next) => {
     res.json(rows);
 });
 
-export const getImage = asyncHandler(async (req,res,next) => {
+export const getImageById = asyncHandler(async (req,res,next) => {
     const {
         params: {id},
     } = req;
