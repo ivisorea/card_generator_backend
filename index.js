@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from "cors";
 import imagesRouter from './routes/imagesRoutes.js';
 import messageRoutes from './routes/messageRoutes.js';
 
@@ -6,6 +7,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 app.use(express.json());
+app.use(cors());
 app.use('/images', imagesRouter)
 app.use('/messages', messageRoutes)
 app.use('*', (req, res) => res.send(
